@@ -1,6 +1,6 @@
 from flask_sqlalchemy import SQLAlchemy
 
-from .views.py import app
+from .views import app
 
 db = SQLAlchemy(app)
 
@@ -12,5 +12,5 @@ class Content(db.model):
     def __init__(self, description, gender):
         self.description = description
         self.gender = gender
-        
-db.vreate_all()
+
+db.create_all()

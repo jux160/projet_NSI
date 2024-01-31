@@ -14,8 +14,6 @@ class Content(db.Model):
         self.description = description
         self.gender = gender
 
-with app.app_context():
-    db.create_all()
     
 def init_db():
     db.drop_all()
@@ -24,3 +22,7 @@ def init_db():
     db.session.add(Content("what's your favorite scary movie",0))
     db.session.commit()
     lg.warning('database initialized successfully')
+    
+
+with app.app_context():
+    db.create_all()
